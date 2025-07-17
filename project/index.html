@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated Pizza Navbar and Footer</title>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">RESTRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><div></div></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Options Below Navbar -->
+    <div class="options-container mt-5">
+        <div class="d-flex justify-content-center">
+            <a href="#pizzaCards" class="option">Pizza</a>
+            <a href="#burgerCards" class="option">Burger</a>
+            <a href="#drinkCards" class="option">Drinks</a>
+        </div>
+    </div>
+
+   <!-- Product Cards -->
+   <div id="productCards" class="container mt-4">
+
+    <!-- Pizza Section -->
+    <div id="pizzaCards" class="row d-none">
+        <!-- Pizza Heading -->
+        <div class="pizza-container">
+            <span class="pizza-text">Explore the Ultimate Pizza Experience</span>
+        </div>
+         <!-- Pizza 1 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/crispy_paneer_&_capsicum.jpg" class="card-img-top" alt="Delicious Pizza 1">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Crispy Paneer & Capsicum Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Molten Cheese, Crispy Capsicum & Spicy Red Paprika)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹99</span>
+                </div>
+                <button class="btn btn-select" data-item="Crispy Paneer & Capsicum Pizza" data-price="99">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza1">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 1 -->
+<div id="descriptionOverlayPizza1" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">45g per serving</span> (from crust and capsicum)</li>
+                <li><strong>Fat:</strong> <span class="highlight">22g per serving</span> (from cheese and oil)</li>
+                <li><strong>Protein:</strong> <span class="highlight">18g per serving</span> (from paneer and cheese)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">5g per serving</span> (from red paprika and sauce)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                This pizza is packed with protein and fiber from paneer and capsicum. It provides a good balance of healthy fats, especially from the cheese, which supports muscle growth and energy. The paprika adds antioxidants and aids digestion.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> High sugar content due to the sauce and spices.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from the cheese.</li>
+                <li><span class="warn">High Cholesterol:</span> Rich in saturated fats from cheese and paneer.</li>
+                <li><span class="warn">Pregnancy:</span> Consult a doctor for dietary advice if you're concerned about the spicy ingredients.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <!-- Pizza 2 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/corn_&_capsicum_pizza.jpg" class="card-img-top" alt="Delicious Pizza 2">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Corn & Capsicum Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Molten Cheese, Golden Corn, Capsicum, Black Olives & Red Paprika)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹99</span>
+                </div>
+                <button class="btn btn-select" data-item="Corn & Capsicum Pizza" data-price="99">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza2">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 2 -->
+<div id="descriptionOverlayPizza2" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from crust and corn)</li>
+                <li><strong>Fat:</strong> <span class="highlight">18g per serving</span> (from cheese and olives)</li>
+                <li><strong>Protein:</strong> <span class="highlight">15g per serving</span> (from cheese and capsicum)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">4g per serving</span> (from corn and sauce)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                The combination of corn and capsicum provides a rich source of vitamins and minerals, while the black olives and cheese provide a balance of healthy fats. It's a great option for those seeking a vegetarian pizza with high nutritional value.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> The corn can cause a spike in blood sugar levels.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from the cheese and olives.</li>
+                <li><span class="warn">Lactose Intolerance:</span> Contains dairy.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Pizza 3 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/farmhouse_loaded_with_grilled_mushroom.jpg" class="card-img-top" alt="Delicious Pizza 3">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Farmhouse-Mushroom Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Tomato Pieces, Grilled Mushroom, Grilled Onion & Crispy Capsicum)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹120</span>
+                </div>
+                <button class="btn btn-select" data-item="Farmhouse-Mushroom Pizza" data-price="120">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza3">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 3 -->
+<div id="descriptionOverlayPizza3" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">52g per serving</span> (from crust and mushrooms)</li>
+                <li><strong>Fat:</strong> <span class="highlight">20g per serving</span> (from cheese and oil)</li>
+                <li><strong>Protein:</strong> <span class="highlight">16g per serving</span> (from mushrooms and cheese)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">7g per serving</span> (from tomatoes and sauce)</li>
+                <li><strong>Calories:</strong> <span class="highlight">380 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                Grilled mushrooms provide a rich source of antioxidants, while capsicum and onion add a burst of vitamins. This pizza is perfect for anyone looking for a hearty and nutritious vegetarian option.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> Tomatoes and mushrooms may cause spikes in blood sugar.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from cheese.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <!-- Pizza 4 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/molten_cheese_pizza.jpg" class="card-img-top" alt="Delicious Pizza 4">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Molten Cheese Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Molten Cheese Indulgence With Delight Of 100% Mozzarella Cheese)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹220</span>
+                </div>
+                <button class="btn btn-select" data-item="Molten Cheese Pizza" data-price="220">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza4">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 4 -->
+<div id="descriptionOverlayPizza4" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from crust and mozzarella cheese)</li>
+                <li><strong>Fat:</strong> <span class="highlight">30g per serving</span> (from cheese and olive oil)</li>
+                <li><strong>Protein:</strong> <span class="highlight">25g per serving</span> (from mozzarella cheese and any additional protein toppings)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">5g per serving</span> (from tomato sauce and cheese)</li>
+                <li><strong>Calories:</strong> <span class="highlight">500 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                Molten cheese pizza is rich in calcium, thanks to the 100% mozzarella cheese. The cheese also provides essential fats, while the tomato sauce contains antioxidants like lycopene. The dish offers a balanced amount of protein and carbs for energy.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Heart Conditions:</span> High fat content from cheese and olive oil.</li>
+                <li><span class="warn">Lactose Intolerance:</span> The pizza contains dairy-based cheese.</li>
+                <li><span class="warn">High Cholesterol:</span> The high fat content may not be suitable for those with elevated cholesterol levels.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Pizza 5 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/blazing_chicken_&_paprika_pizza.jpg" class="card-img-top" alt="Delicious Pizza 5">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Blazing Chicken & Paprika Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Molten Cheese, Combination of Chicken Keema & Spicy Red Paprika)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹320</span>
+                </div>
+                <button class="btn btn-select" data-item="Blazing Chicken & Paprika Pizza" data-price="320">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza5">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 5 -->
+<div id="descriptionOverlayPizza5" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from crust)</li>
+                <li><strong>Fat:</strong> <span class="highlight">30g per serving</span> (from chicken and cheese)</li>
+                <li><strong>Protein:</strong> <span class="highlight">25g per serving</span> (from chicken keema)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">7g per serving</span> (from paprika sauce)</li>
+                <li><strong>Calories:</strong> <span class="highlight">500 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                The combination of chicken keema and spicy red paprika provides a delicious and protein-packed meal. The cheese adds calcium and flavor, making it a tasty choice for meat lovers.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> Spicy ingredients and sugar content can spike blood sugar.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from chicken and cheese.</li>
+                <li><span class="warn">Spicy Food Sensitivity:</span> Not suitable for those sensitive to spicy food.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <!-- Pizza 6 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/chicken_fiesta_pizza.jpg" class="card-img-top" alt="Delicious Pizza 6">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Chicken Fiesta Pizza
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Molten Cheese,Grilled Chicken Rashers,Peri-Peri Chicken & capsicum)
+
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹320</span>
+                </div>
+                <button class="btn btn-select" data-item="Chicken Fiesta Pizza" data-price="320">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayPizza6">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Pizza 6 -->
+<div id="descriptionOverlayPizza6" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from crust and capsicum)</li>
+                <li><strong>Fat:</strong> <span class="highlight">35g per serving</span> (from cheese and chicken rashers)</li>
+                <li><strong>Protein:</strong> <span class="highlight">30g per serving</span> (from grilled chicken rashers)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">8g per serving</span> (from peri-peri sauce and capsicum)</li>
+                <li><strong>Calories:</strong> <span class="highlight">550 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                This pizza offers a rich source of protein from grilled chicken and cheese. The peri-peri sauce provides flavor and spice, while capsicum adds a burst of vitamins and minerals.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Heart Conditions:</span> High fat content from cheese and chicken rashers.</li>
+                <li><span class="warn">Diabetes:</span> Spicy and sugary ingredients can affect blood sugar.</li>
+                <li><span class="warn">Spicy Food Sensitivity:</span> Contains peri-peri sauce, which may not be suitable for all.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+
+    <!-- Burger Section -->
+    <div id="burgerCards" class="row d-none">
+        <div class="burger-container">
+            <span class="burger-text">Discover Our Desi Burger Delights</span>
+        </div>
+       <!-- Burger 1 -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="img\1.jpg" class="card-img-top" alt="Juicy Burger 1">
+            <div class="card-body">
+                <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                    Crispy Veg Burger
+                </p>
+                <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                    (Molten Cheese, Crispy Lettuce, Tangy Pickles, Spicy Red Paprika, Crunchy Onion Rings, Fresh
+                    Tomato Slices, & Golden Veg Patty)
+                </p>
+                <br>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                        <span class="price">price - ₹59</span>
+                    </div>
+                    <button class="btn btn-select" data-item="Crispy Veg Burger" data-price="59">Select Item</button>
+                </div>
+                <button class="btn btn-description" data-overlay="descriptionOverlayBurger1">Description</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Description Overlay for Burger 1 -->
+    <div id="descriptionOverlayBurger1" class="overlay">
+        <div class="overlay-container">
+            <span class="close-btn">&times;</span>
+            <div class="overlay-content">
+                <h2>Health Factors</h2>
+                <ul>
+                    <li><strong>Carbohydrates:</strong> <span class="highlight">35g per serving</span> (from burger bun and veggies)</li>
+                    <li><strong>Fat:</strong> <span class="highlight">18g per serving</span> (from cheese and fried onion rings)</li>
+                    <li><strong>Protein:</strong> <span class="highlight">12g per serving</span> (from golden veg patty and cheese)</li>
+                    <li><strong>Sugar:</strong> <span class="highlight">4g per serving</span> (from pickles and sauce)</li>
+                    <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from all ingredients)</li>
+                </ul>
+                <h3>Benefits of Eating This</h3>
+                <p>
+                    This burger is a great source of plant-based protein, fiber from vegetables, and healthy fats from cheese. The pickles and spices add a unique taste and aid digestion.
+                </p>
+                <h3>Who Should Avoid:</h3>
+                <ul>
+                    <li><span class="warn">Diabetes:</span> High sugar content due to pickles and sauce.</li>
+                    <li><span class="warn">Heart Conditions:</span> High fat content from cheese and fried onion rings.</li>
+                    <li><span class="warn">Gluten Sensitivity:</span> Contains wheat-based bun, which may not be suitable for those with gluten intolerance.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+           <!-- Burger 2 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img\2.jpg" class="card-img-top" alt="Juicy Burger 2">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Veg Makhani Burst Burger
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Creamy Makhani Sauce, Soft Paneer, Spicy Capsicum, Crisp Lettuce, Fresh Tomato, Tangy Onions, & Golden Veg Patty)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹69</span>
+                </div>
+                <button class="btn btn-select" data-item="Veg Makhani Burst Burger" data-price="69">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayBurger2">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Burger 2 -->
+<div id="descriptionOverlayBurger2" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">40g per serving</span> (from burger bun and makhani sauce)</li>
+                <li><strong>Fat:</strong> <span class="highlight">20g per serving</span> (from cheese, paneer, and oil)</li>
+                <li><strong>Protein:</strong> <span class="highlight">15g per serving</span> (from paneer and golden veg patty)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">5g per serving</span> (from makhani sauce and vegetables)</li>
+                <li><strong>Calories:</strong> <span class="highlight">400 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                This burger is rich in protein from paneer and provides a good source of healthy fats from cheese and the golden veg patty. The creamy makhani sauce adds a flavorful boost, while the vegetables offer fiber and antioxidants.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> Due to the sugar content in the makhani sauce.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from cheese and oil.</li>
+                <li><span class="warn">Lactose Intolerant Individuals:</span> Contains cheese and paneer.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <!-- Burger 3 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/3.jpg" class="card-img-top" alt="Juicy Burger 3">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Crispy Veg Double Patty Burger
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Crispy Double Veg Patties, Melted Cheese, Fresh Lettuce, Juicy Tomato, Crunchy Onions, Tangy Pickles, & Creamy Mayo)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹85</span>
+                </div>
+                <button class="btn btn-select" data-item="Crispy Veg Double Patty Burger" data-price="85">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayBurger3">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Burger 3 -->
+<div id="descriptionOverlayBurger3" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from buns and patties)</li>
+                <li><strong>Fat:</strong> <span class="highlight">25g per serving</span> (from cheese and mayo)</li>
+                <li><strong>Protein:</strong> <span class="highlight">18g per serving</span> (from double veggie patties)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">8g per serving</span> (from creamy mayo and pickles)</li>
+                <li><strong>Calories:</strong> <span class="highlight">450 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                A high-protein burger with double veggie patties that are filling and satisfying. The mayo adds healthy fats, while fresh veggies provide fiber and essential vitamins.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> Due to the sugar content in mayo and pickles.</li>
+                <li><span class="warn">Lactose Intolerant Individuals:</span> Contains cheese and mayo.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from cheese and mayo.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Burger 4 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/4.jpg" class="card-img-top" alt="Juicy Burger 4">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Whopper JR Veg Burger
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Flame-Grilled Veg Patty, Fresh Lettuce, Sliced Tomatoes, Crisp Onions, Tangy Pickles, & Creamy Ketchup)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹129</span>
+                </div>
+                <button class="btn btn-select" data-item="Whopper JR Veg Burger" data-price="129">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayBurger4">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Burger 4 -->
+<div id="descriptionOverlayBurger4" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">45g per serving</span> (from the bun and veg patty)</li>
+                <li><strong>Fat:</strong> <span class="highlight">18g per serving</span> (from the creamy ketchup and grilled patty)</li>
+                <li><strong>Protein:</strong> <span class="highlight">12g per serving</span> (from the grilled veggie patty)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">7g per serving</span> (from ketchup and pickles)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                A delicious and lighter option with a flame-grilled veggie patty. The fresh vegetables provide vitamins and fiber, while the ketchup adds a sweet-tangy flavor.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Heart Conditions:</span> Contains moderate fat from the creamy ketchup.</li>
+                <li><span class="warn">Sugar Sensitivity:</span> The ketchup and pickles may be high in sugar content.</li>
+                <li><span class="warn">Gluten Sensitivity:</span> Contains gluten in the bun.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Burger 5 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/5.jpg" class="card-img-top" alt="Juicy Burger 5">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Chicken Makhani Burst Burger
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Tender Chicken, Creamy Makhani Sauce, Spicy Capsicum, Crisp Lettuce, Fresh Tomato, Tangy Onions, & Golden Toasted Bun)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹99</span>
+                </div>
+                <button class="btn btn-select" data-item="Chicken Makhani Burst Burger" data-price="99">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayBurger5">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Burger 5 -->
+<div id="descriptionOverlayBurger5" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from the bun and chicken)</li>
+                <li><strong>Fat:</strong> <span class="highlight">30g per serving</span> (from creamy makhani sauce and chicken)</li>
+                <li><strong>Protein:</strong> <span class="highlight">25g per serving</span> (from the tender chicken)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">8g per serving</span> (from the sauce and vegetables)</li>
+                <li><strong>Calories:</strong> <span class="highlight">450 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                The rich, creamy Makhani sauce combined with the protein-packed chicken makes for a delicious and filling meal. The fresh vegetables add a nice crunch while complementing the flavors.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Heart Conditions:</span> High fat content due to the creamy sauce and chicken.</li>
+                <li><span class="warn">Spicy Food Sensitivity:</span> The capsicum adds a certain spice, which might not be suitable for everyone.</li>
+                <li><span class="warn">Dairy Sensitivity:</span> The sauce contains dairy products.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <!-- Burger 6 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/6.jpg" class="card-img-top" alt="Juicy Burger 6">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Chicken JR Double Patty Burger
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Juicy Double Chicken Patties, Melted Cheese, Crisp Lettuce, Sliced Tomatoes, Tangy Pickles, Crunchy Onions, & Creamy Mayo)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹129</span>
+                </div>
+                <button class="btn btn-select" data-item="Chicken JR Double Patty Burger" data-price="129">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayBurger6">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Burger 6 -->
+<div id="descriptionOverlayBurger6" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">55g per serving</span> (from buns and sauce)</li>
+                <li><strong>Fat:</strong> <span class="highlight">35g per serving</span> (from double chicken patties and mayo)</li>
+                <li><strong>Protein:</strong> <span class="highlight">40g per serving</span> (from chicken patties)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">7g per serving</span> (from sauce and pickles)</li>
+                <li><strong>Calories:</strong> <span class="highlight">600 kcal per serving</span> (combined from all ingredients)</li>
+            </ul>
+            <h3>Benefits of Eating This</h3>
+            <p>
+                A protein-packed burger with juicy double chicken patties, which helps build muscle while providing a hearty meal. The fresh vegetables add a refreshing contrast to the rich and creamy mayo.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">High-Calorie Dieters:</span> The burger contains a high amount of calories due to the double patties.</li>
+                <li><span class="warn">Heart Conditions:</span> High fat content from the mayo and chicken patties.</li>
+                <li><span class="warn">Spicy Food Sensitivity:</span> If you are sensitive to spice, the tangy pickles might be too strong.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- Drinks Section -->
+    <div id="drinkCards" class="row d-none">
+        <!-- Drinks Heading -->
+        <div class="drinks-container">
+            <span class="drinks-text">Explore Delicious and Refreshing Drinks</span>
+        </div>
+        <!-- Drink 1 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/10.jpg" class="card-img-top" alt="Refreshing Drink 1">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Coco Cola Chill
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Chilled Coca-Cola, Crushed Ice, Lemon Zest, Mint Leaves, Dash of Soda, and a Hint of Sweet Syrup)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹40</span>
+                </div>
+                <button class="btn btn-select" data-item="Coco Cola Chill Drink" data-price="40">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink1">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 1 -->
+<div id="descriptionOverlayDrink1" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">38g per serving</span> (from Coca-Cola and sweet syrup)</li>
+                <li><strong>Fat:</strong> <span class="highlight">0g per serving</span> (no fat content)</li>
+                <li><strong>Protein:</strong> <span class="highlight">0g per serving</span> (no protein content)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">35g per serving</span> (from Coca-Cola and sweet syrup)</li>
+                <li><strong>Calories:</strong> <span class="highlight">150 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                This refreshing drink offers a burst of energy from sugar and caffeine, perfect for a quick refreshment. The mint leaves and lemon zest add a zing that enhances the flavor.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> The high sugar content may affect blood sugar levels.</li>
+                <li><span class="warn">Calorie-Conscious Individuals:</span> A sugary drink that could add extra calories to your daily intake.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Drink 2 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/11.jpg" class="card-img-top" alt="Refreshing Drink 2">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Cold Coffee Delight
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Freshly Brewed Chilled Coffee, Creamy Milk, Vanilla Ice Cream, Drizzle of Chocolate Syrup, Ice Cubes, Whipped Cream, Chocolate Shavings)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹60</span>
+                </div>
+                <button class="btn btn-select" data-item="Cold Coffee Delight Drink" data-price="60">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink2">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 2 -->
+<div id="descriptionOverlayDrink2" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from coffee and chocolate syrup)</li>
+                <li><strong>Fat:</strong> <span class="highlight">20g per serving</span> (from milk and whipped cream)</li>
+                <li><strong>Protein:</strong> <span class="highlight">6g per serving</span> (from milk and ice cream)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">45g per serving</span> (from chocolate syrup and ice cream)</li>
+                <li><strong>Calories:</strong> <span class="highlight">280 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                This indulgent cold coffee offers a sweet, creamy experience with a caffeine boost, perfect for a refreshing break. The chocolate syrup and whipped cream elevate the flavor for coffee lovers.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> The high sugar content may impact blood sugar levels.</li>
+                <li><span class="warn">Calorie-Conscious Individuals:</span> Contains a substantial amount of sugar and fat.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Drink 3 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/12.jpg" class="card-img-top" alt="Refreshing Drink 3">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Buttersmooth Delight
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Creamy Butterscotch Syrup, Vanilla Ice Cream, Chilled Milk, Sweetened Condensed Milk, Crushed Ice, Whipped Cream, and a Caramel Drizzle)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹40</span>
+                </div>
+                <button class="btn btn-select" data-item="Buttersmooth Delight Drink" data-price="40">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink3">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 3 -->
+<div id="descriptionOverlayDrink3" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">55g per serving</span> (from butterscotch syrup, condensed milk, and ice cream)</li>
+                <li><strong>Fat:</strong> <span class="highlight">22g per serving</span> (from milk, ice cream, and whipped cream)</li>
+                <li><strong>Protein:</strong> <span class="highlight">5g per serving</span> (from milk and ice cream)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">50g per serving</span> (from sweetened condensed milk and butterscotch syrup)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                This indulgent drink is a perfect dessert-like treat, combining creamy butterscotch syrup with vanilla ice cream for a rich, velvety experience. The caramel drizzle adds an extra touch of sweetness.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> High sugar content may affect blood sugar levels.</li>
+                <li><span class="warn">Calorie-Conscious Individuals:</span> This drink is high in calories and sugar.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Drink 4 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/13.jpg" class="card-img-top" alt="Refreshing Drink 4">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                ChocoLuxe Delight
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Rich Chocolate Syrup, Velvet Chocolate Ice Cream, Creamy Milk, Crushed Ice, Whipped Cream, and a Sprinkle of Cocoa Powder)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹50</span>
+                </div>
+                <button class="btn btn-select" data-item="ChocoLuxe Delight Drink" data-price="50">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink4">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 4 -->
+<div id="descriptionOverlayDrink4" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">50g per serving</span> (from chocolate syrup, ice cream, and milk)</li>
+                <li><strong>Fat:</strong> <span class="highlight">18g per serving</span> (from chocolate ice cream, whipped cream, and milk)</li>
+                <li><strong>Protein:</strong> <span class="highlight">6g per serving</span> (from milk and chocolate ice cream)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">45g per serving</span> (from chocolate syrup, ice cream, and whipped cream)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                A dream come true for chocolate lovers, this drink offers a rich and velvety experience with every sip, blending chocolate ice cream with creamy milk and topped with whipped cream.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> High sugar content may lead to spikes in blood sugar.</li>
+                <li><span class="warn">Weight Management:</span> High calorie and sugar content, best enjoyed in moderation.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Drink 5 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/14.jpg" class="card-img-top" alt="Refreshing Drink 5">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Berry Bliss Shake
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Fresh Strawberries, Blueberries, Raspberries, Vanilla Ice Cream, Creamy Milk, Honey, Crushed Ice, and Whipped Cream)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹60</span>
+                </div>
+                <button class="btn btn-select" data-item="Berry Bliss Shake Drink" data-price="60">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink5">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 5 -->
+<div id="descriptionOverlayDrink5" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">45g per serving</span> (from fruit and honey)</li>
+                <li><strong>Fat:</strong> <span class="highlight">15g per serving</span> (from ice cream and whipped cream)</li>
+                <li><strong>Protein:</strong> <span class="highlight">8g per serving</span> (from milk and ice cream)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">35g per serving</span> (from fruit and honey)</li>
+                <li><strong>Calories:</strong> <span class="highlight">350 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                This refreshing shake is packed with antioxidant-rich berries that help boost immunity and promote skin health, combined with the creamy texture of vanilla ice cream and milk.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Diabetes:</span> High sugar content from berries and honey may cause blood sugar spikes.</li>
+                <li><span class="warn">Weight Management:</span> Caloric content may not align with low-calorie diets.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+           <!-- Drink 6 -->
+<div class="col-md-4">
+    <div class="card">
+        <img src="img/15.jpg" class="card-img-top" alt="Refreshing Drink 6">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center; font-size: 20px; font-weight: bold;">
+                Frosty Mango Twist
+            </p>
+            <p class="card-text" style="text-align: center; font-size: 10px; margin-top: -14px;">
+                (Fresh Mango Puree, Creamy Yogurt, Chilled Milk, A Touch of Honey, Crushed Ice, Whipped Cream, and a Mango Slice Garnish)
+            </p>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="display: inline-block; padding: 5px 20px; background-color: #007bff; color: white; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+                    <span class="price">price - ₹50</span>
+                </div>
+                <button class="btn btn-select" data-item="Frosty Mango Twist Drink" data-price="50">Select Item</button>
+            </div>
+            <button class="btn btn-description" data-overlay="descriptionOverlayDrink6">Description</button>
+        </div>
+    </div>
+</div>
+
+<!-- Full-Screen Description Overlay for Drink 6 -->
+<div id="descriptionOverlayDrink6" class="overlay">
+    <div class="overlay-container">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <h2>Health Factors</h2>
+            <ul>
+                <li><strong>Carbohydrates:</strong> <span class="highlight">38g per serving</span> (from mango puree and honey)</li>
+                <li><strong>Fat:</strong> <span class="highlight">12g per serving</span> (from yogurt and whipped cream)</li>
+                <li><strong>Protein:</strong> <span class="highlight">6g per serving</span> (from yogurt and milk)</li>
+                <li><strong>Sugar:</strong> <span class="highlight">28g per serving</span> (from mango puree and honey)</li>
+                <li><strong>Calories:</strong> <span class="highlight">320 kcal per serving</span> (combined from ingredients)</li>
+            </ul>
+            <h3>Benefits of Drinking This</h3>
+            <p>
+                This creamy, tropical drink provides a refreshing mango flavor along with the health benefits of yogurt and the natural sweetness of honey.
+            </p>
+            <h3>Who Should Avoid:</h3>
+            <ul>
+                <li><span class="warn">Lactose Intolerance:</span> Contains dairy from yogurt and milk.</li>
+                <li><span class="warn">Diabetes:</span> High sugar content could affect blood sugar levels.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<!-- Customization Slide for Pizzas -->
+<div id="customizationPizza" class="custom-slide">
+    <div class="custom-content">
+        <h2 id="selectedPizzaTitle">Selected Pizza</h2>
+        <button id="descriptionTogglePizza" class="btn btn-info mt-3"
+            style="background-color: white; color: black; border: 0px; margin-top: 0px;" disabled></button></button>
+        <div id="pizzaDescription" style="display: none;">
+            <p id="pizzaDescriptionText"></p>
+        </div>
+        <div id="customizePizzaOptions">
+            <h5><b><u>Choose Size</b></u></h5>
+            <div>
+                <input type="radio" name="sizePizza" id="sizePizzaSmall" value="Small" data-price="0" checked>
+                <label for="sizePizzaSmall">Regular</label><br>
+                <input type="radio" name="sizePizza" id="sizePizzaMedium" value="Medium" data-price="100">
+                <label for="sizePizzaMedium">Medium <b> (+ ₹100)</b></label><br>
+                <input type="radio" name="sizePizza" id="sizePizzaLarge" value="Large" data-price="270">
+                <label for="sizePizzaLarge">Large <b> (+ ₹270)</b></label>
+            </div><br>
+
+            <h5><b><u>Extra Ingredients</b></u></h5>
+            <div id="pizzaIngredientOptions">
+                <input type="checkbox" id="ExtraCheese" data-price="20">
+                <label for="ExtraCheese">Extra Cheese (+₹20)</label><br>
+                <input type="checkbox" id="ExtraToppings" data-price="20">
+                <label for="ExtraToppings">Extra toppings (+₹20)</label><br>
+            </div><br>
+
+            <h5><b><u>Remove Ingredients</b></u></h5>
+            <div id="pizzaFreeIngredientOptions">
+                <input type="checkbox" id="Garlic">
+                <label for="Garlic">Garlic</label><br>
+                <input type="checkbox" id="Ginger">
+                <label for="Ginger">Ginger</label><br>
+                <input type="checkbox" id="Onion">
+                <label for="Onion">Onion</label><br>
+            </div><br>
+
+            <h5><b><u>Quantity</b></u></h5>
+            <div class="quantity-control">
+                <button class="btn btn-outline-dark" id="decreasePizzaQuantity">-</button>
+                <span id="pizzaQuantity">1</span>
+                <button class="btn btn-outline-dark" id="increasePizzaQuantity">+</button>
+            </div><br>
+
+            <button class="btn btn-success mt-3" id="addToCartPizzaButton">Add to Cart</button>
+            <button class="btn btn-danger mt-3" id="closePizzaCustomization">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Customization Slide for Burgers -->
+<div id="customizationBurger" class="custom-slide">
+    <div class="custom-content">
+        <h2 id="selectedBurgerTitle">Selected Burger</h2>
+        <button id="descriptionToggleBurger" class="btn btn-info mt-3"
+            style="background-color: white; color: black; border: 0px; margin-top: 0px;" disabled></button></button>
+        <div id="burgerDescription" style="display: none;">
+            <p id="burgerDescriptionText"></p>
+        </div>
+        <div id="customizeBurgerOptions">
+
+            <h5><b><u>Extra Ingredients</b></u></h5>
+            <div id="burgerIngredientOptions">
+                <input type="checkbox" id="ExtraCheese" data-price="10">
+                <label for="ExtraCheese">Extra Cheese (+₹10)</label><br>
+                <input type="checkbox" id="ExtraToppings" data-price="10">
+                <label for="ExtraToppings">Extra toppings (+₹10)</label><br>
+            </div><br>
+
+            <h6><b><u>Add/Remove Ingredients</b></u></h6>
+            <div id="burgerFreeIngredientOptions">
+                <input type="checkbox" id="Onion">
+                <label for="Onion">Onion</label><br>
+                <input type="checkbox" id="Tomato">
+                <label for="Tomato">Tomato</label><br>
+            </div><br>
+
+            <h5><b><u>Quantity</b></u></h5>
+            <div class="quantity-control">
+                <button class="btn btn-outline-dark" id="decreaseBurgerQuantity">-</button>
+                <span id="burgerQuantity">1</span>
+                <button class="btn btn-outline-dark" id="increaseBurgerQuantity">+</button>
+            </div><br>
+            <button class="btn btn-success mt-3" id="addToCartBurgerButton">Add to Cart</button>
+            <button class="btn btn-danger mt-3" id="closeBurgerCustomization">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Customization Slide for Drinks -->
+<div id="customizationDrink" class="custom-slide">
+    <div class="custom-content">
+        <h2 id="selectedDrinkTitle">Selected Drink</h2>
+        <button id="descriptionToggleDrink" class="btn"
+            style="background-color: white; color: black; border: 0px; margin-top: 0px;" disabled></button>
+
+        <div id="drinkDescription" style="display: none;">
+            <p id="drinkDescriptionText"></p>
+        </div>
+        <div id="customizeDrinkOptions">
+            <h5><b><u>Choose Size</b></u></h5>
+            <div>
+                <input type="radio" name="sizeDrink" id="sizeDrinkSmall" value="Small" data-price="0" checked>
+                <label for="sizeDrinkSmall">Small</label><br>
+                <input type="radio" name="sizeDrink" id="sizeDrinkMedium" value="Medium" data-price="20">
+                <label for="sizeDrinkMedium">Medium (+₹20)</label><br>
+                <input type="radio" name="sizeDrink" id="sizeDrinkLarge" value="Large" data-price="40">
+                <label for="sizeDrinkLarge">Large (+₹40)</label>
+            </div>
+
+            <h5><b><u>Extra Ingredients</b></u></h5>
+            <div id="drinkIngredientOptions">
+                <input type="checkbox" id="ExtraIcecream" data-price="10">
+                <label for="ExtraIcecream">Extra Icecream (+₹10)</label><br>
+                <input type="checkbox" id="ExtraButter" data-price="10">
+                <label for="ExtraButter">Extra Butter (+₹10)</label><br>
+            </div>
+            <h5><b><u>Quantity</b></u></h5>
+            <div class="quantity-control">
+                <button class="btn btn-outline-dark" id="decreaseDrinkQuantity">-</button>
+                <span id="drinkQuantity">1</span>
+                <button class="btn btn-outline-dark" id="increaseDrinkQuantity">+</button>
+            </div>
+
+            <button class="btn btn-success mt-3" id="addToCartDrinkButton">Add to Cart</button>
+            <button class="btn btn-danger mt-3" id="closeDrinkCustomization">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Cart Slide -->
+<div id="cartSlide" class="cart-slide">
+    <div class="cart-content">
+        <center>
+            <h2><u><b>Your Cart</b></u></h2>
+        </center><br>
+        <div id="cartItems"></div>
+        <p id="emptyCartMessage">No items in cart.</p>
+        <p id="totalPriceDisplay"><b>Total Price:</b> ₹0.00</p>
+        <button id="closeCart" class="btn btn-danger">Close</button>
+        <button id="checkoutButton" class="btn btn-primary mt-3" style="display: none"
+            onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- Confirmation Alert -->
+<div id="confirmationAlert" class="confirmation-alert hidden">
+    <div class="alert-content">
+        <h3>Are you sure you want to remove this item from the cart?</h3>
+        <button id="confirmRemove" class="btn btn-danger">Confirm</button>
+        <button id="cancelRemove" class="btn btn-secondary">Cancel</button>
+    </div>
+</div>
+
+<!-- Alert for selecting size -->
+<div id="sizeAlert" class="alert" style="display: none;">
+    <p>Please select a size before adding to the cart.</p>
+    <button id="closeSizeAlert" class="btn">Close</button>
+</div>
+
+
+
+
+<!-- Floating Cart Button -->
+<button id="cartToggle" class="btn bag-button">
+    <i class="bi bi-cart4"></i>
+    <span id="cartCount" class="badge">0</span>
+</button>
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <p class="copyright">
+            Copyright © 2084 Company Name
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS and Icons -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+<script src="scripts.js"></script>
+</body>
+
+</html>

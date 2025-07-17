@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Food Order</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Universal Alert Box Styling */
+        .alert-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            z-index: 1000;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        /* Success Alert */
+        .alert-success {
+            background-color: #54c76e;
+            /* Green */
+        }
+
+        /* Error Alert */
+        .alert-error {
+            background-color: #dc3545;
+            /* Red */
+        }
+
+        /* Warning Alert */
+        .alert-warning {
+            background-color: #ffc107;
+            /* Yellow */
+            color: #212529;
+            /* Dark text for visibility */
+        }
+
+        /* Info Alert */
+        .alert-info {
+            background-color: #218838;
+            /* Blue */
+        }
+
+        /* Button Styling for Alerts */
+        .alert-box button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Button color matching the alert type */
+        .alert-success button {
+            background-color: #218838;
+            /* Darker green */
+        }
+
+        .alert-error button {
+            background-color: #c82333;
+            /* Darker red */
+        }
+
+        .alert-warning button {
+            background-color: #e0a800;
+            /* Darker yellow */
+            color: #212529;
+            /* Dark text for better visibility */
+        }
+
+        .alert-info button {
+            background-color: #007bff;
+            /* Blue */
+        }
+
+        .alert-box button:hover {
+            opacity: 0.8;
+        }
+
+        /* Close Button Styling (Below the Alert Text) */
+        .alert-box .close-btn {
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .custom-card {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+
+        /* Loading Spinner box style */
+        .loading-box {
+            position: fixed;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            /* Hidden by default */
+            text-align: center;
+            z-index: 9998;
+        }
+
+        .loading-box .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .loading-box p {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Checkout</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <center>
+                        <h2><u>Customer Details</u></h2>
+                    </center><br>
+                    <form id="customerForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label"><b>Full Name *</b></label>
+                            <input type="text" class="form-control" id="fullName" required
+                                placeholder="Enter your full name" maxlength="30" oninput="validateFullName()">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label"><b>Phone *</b></label>
+                            <input type="tel" class="form-control" id="phone" required
+                                placeholder="Enter your 10-digit phone number" pattern="\d{10}" maxlength="10"
+                                inputmode="numeric">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><b>Email</b> (Optional)</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="Enter your email (optional)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tableNo" class="form-label"><b>Table Number *</b></label>
+                            <input type="number" class="form-control" id="tableNo" required
+                                placeholder="Enter your table number" oninput="restrictToTwoDigits()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <center>
+                        <h2><u>Order Summary</u></h2>
+                    </center><br>
+                    <div id="cartItems"></div>
+                    <div id="emptyCartMessage" class="text-center" style="display: none;">
+                        <p>Your cart is empty. Please add items to your cart before checking out.</p>
+                    </div>
+                    <div class="mt-3">
+                        <strong>Total: </strong><span id="totalPrice"></span><br>
+                        <strong>GST (3.66%): </strong><span id="gstPrice"></span><br>
+                        <strong>Grand Total: </strong><span id="grandTotalPrice"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button id="placeOrderBtn" class="btn btn-primary btn-lg">Place Order</button>
+        </div>
+    </div><br><br>
+
+
+
+    <!-- Loading spinner box -->
+    <div id="loadingBox" class="loading-box">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading...</p>
+    </div>
+
+
+    <!-- Success Alert -->
+    <div id="alertSuccess" class="alert-box alert-success">
+        <p id="successMessage">Operation was successful!</p>
+        <button class="close-btn" onclick="closeAlert('alertSuccess')">OK</button>
+    </div>
+
+
+    <!-- Error Alert -->
+    <div id="alertError" class="alert-box alert-error">
+        <p id="errorMessage">Something went wrong. Please try again.</p>
+        <button class="close-btn" onclick="closeAlert('alertError')">Close</button>
+    </div>
+
+    <!-- Warning Alert -->
+    <div id="alertWarning" class="alert-box alert-warning">
+        <p id="warningMessage">Please be cautious while proceeding.</p>
+        <button class="close-btn" onclick="closeAlert('alertWarning')">Close</button>
+    </div>
+
+    <!-- Info Alert -->
+    <div id="alertInfo" class="alert-box alert-info">
+        <p id="infoMessage">Please check the details before submitting.</p>
+        <button class="close-btn" onclick="closeAlert('alertInfo')">Close</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            displayCart();
+
+            // Form submit handler
+            document.getElementById('placeOrderBtn').addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission
+                if (validateForm()) {
+                    // Collect all form data
+                    const orderData = {
+                        fullName: document.getElementById('fullName').value,
+                        phone: document.getElementById('phone').value,
+                        email: document.getElementById('email').value || null,
+                        tableNo: document.getElementById('tableNo').value,
+                        cart: JSON.parse(localStorage.getItem('cartItems')) || [],
+                        totalPrice: calculateTotalPrice()
+                    };
+
+                    // Send data to Telegram bot
+                    sendOrderToTelegram(orderData);
+                }
+            });
+
+            // Phone number input validation to allow only digits
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', () => {
+                phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+            });
+        });
+
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const gstElement = document.getElementById('gstPrice');
+            const grandTotalElement = document.getElementById('grandTotalPrice');
+
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+                    itemElement.innerHTML = ` 
+                <h5>${item.name}</h5><br>
+                <p><b>Size:</b> ${item.size || 'N/A'}</p>
+                <p><b>Quantity:</b> ${item.quantity}</p>
+                <p><b>Price:</b> ₹${(item.price).toFixed(2)}</p>
+                <p><b>Extra Ingredients:</b> ${item.ingredients?.join(', ') || 'None'}</p>
+                <p><b>Removed Ingredients:</b> ${item.freeIngredients?.join(', ') || 'None'}</p>
+            `;
+                    cartItemsContainer.appendChild(itemElement);
+                    totalPrice += item.price;
+                });
+            }
+
+            // Calculate GST (3.66%)
+            const gstAmount = totalPrice * 0.0366;
+            const grandTotal = totalPrice + gstAmount;
+
+            // Display the calculated values
+            totalPriceElement.textContent = `₹${totalPrice.toFixed(2)}`;
+            gstElement.textContent = `₹${gstAmount.toFixed(2)}`;
+            grandTotalElement.textContent = `₹${grandTotal.toFixed(2)}`;
+        }
+
+        function validateForm() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const tableNo = document.getElementById('tableNo').value.trim();
+
+            let isValid = true;
+            let emptyFields = [];
+
+            // Check each required field and add to the list of empty fields if not filled
+            if (!fullName) emptyFields.push("Full Name");
+            if (!phone) emptyFields.push("Phone");
+            if (!tableNo) emptyFields.push("Table Number");
+
+            // If all required fields are empty
+            if (emptyFields.length === 3) {
+                showAlert('Warning', 'Please fill out all the required fields.');
+                isValid = false;
+            }
+            // If some but not all required fields are empty
+            else if (emptyFields.length > 0) {
+                showAlert('Warning', `Please fill out: ${emptyFields.join(', ')}.`);
+                isValid = false;
+            }
+            // Validate phone number (10 digits)
+            else {
+                const phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(phone)) {
+                    showAlert('Warning', 'Please enter a valid 10-digit phone number.');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        function showAlert(type, message) {
+            let alertBox;
+            let alertMessage;
+
+            // Reset visibility of all alerts
+            document.querySelectorAll('.alert-box').forEach(alert => alert.style.display = 'none');
+
+            // Set the alert box and message based on the type
+            switch (type) {
+                case 'Success':
+                    alertBox = document.getElementById('alertSuccess');
+                    alertMessage = document.getElementById('successMessage');
+                    break;
+                case 'Error':
+                    alertBox = document.getElementById('alertError');
+                    alertMessage = document.getElementById('errorMessage');
+                    break;
+                case 'Warning':
+                    alertBox = document.getElementById('alertWarning');
+                    alertMessage = document.getElementById('warningMessage');
+                    break;
+                case 'Info':
+                    alertBox = document.getElementById('alertInfo');
+                    alertMessage = document.getElementById('infoMessage');
+                    break;
+                default:
+                    return;
+            }
+
+            // Set the message and show the alert box
+            alertMessage.textContent = message;
+            alertBox.style.display = 'block';
+        }
+
+        function closeAlert(alertId) {
+            document.getElementById(alertId).style.display = 'none';
+        }
+
+        function maskPhoneNumber(phone) {
+            return phone.slice(0, 3) + "xxxx" + phone.slice(-3);
+        }
+
+        function maskEmail(email) {
+            const [name, domain] = email.split('@');
+            return name[0] + "xxxxx" + name.slice(-1) + "@" + domain;
+        }
+
+        // Function to show the loading spinner
+        function showLoadingSpinner() {
+            const loadingBox = document.getElementById("loadingBox");
+            loadingBox.style.display = "block"; // Show the spinner
+        }
+
+        // Function to hide the loading spinner
+        function hideLoadingSpinner() {
+            const loadingBox = document.getElementById("loadingBox");
+            loadingBox.style.display = "none"; // Hide the spinner
+        }
+
+        // Function to send order to Telegram
+        function sendOrderToTelegram(orderData) {
+            const chatId = '-1002418420190'; // Replace with your Telegram chat ID
+            const botToken = '7862830997:AAF7cJ2VF8RzFGGY1ucbcY_Wzeg5ZaoLOms'; // Replace with your Telegram bot token
+
+            // Mask sensitive data
+            const maskedPhone = maskPhoneNumber(orderData.phone);
+            const maskedEmail = orderData.email ? maskEmail(orderData.email) : 'N/A';
+
+            // Format the order message for Telegram
+            const orderMessage = ` 
+⚠️ *New order received*\n
+*Name:* ${orderData.fullName}
+*Phone:* ${maskedPhone}
+*Email:* ${maskedEmail}
+*Table no:* ${orderData.tableNo}
+
+
+\n🎉 *Order details*
+${orderData.cart.map(item => ` 
+*Item Name:* ${item.name}
+*Item Quantity:* ${item.quantity}
+*Item Size:* ${item.size || 'N/A'}
+*Extra Ingredient:* ${item.ingredients?.join(', ') || 'None'}
+*Removed Ingredient:* ${item.freeIngredients?.join(', ') || 'None'}
+*Item Price:* ₹${item.price.toFixed(2)}
+`).join('\n')}
+\n*Total Price (before GST):* ₹${orderData.totalPrice.toFixed(2)}
+*GST (3.66%):* ₹${(orderData.totalPrice * 0.0366).toFixed(2)}
+*Grand Total:* ₹${(orderData.totalPrice * 1.0366).toFixed(2)}
+`;
+
+            // Store the data in localStorage
+            localStorage.setItem('orderData', JSON.stringify(orderData));
+
+            // Show the loading spinner before sending the order
+            showLoadingSpinner();
+
+            // Send the order message to Telegram
+            const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(orderMessage)}&parse_mode=Markdown`;
+            fetch(telegramUrl)
+                .then(response => {
+                    // Hide the loading spinner after processing
+                    hideLoadingSpinner();
+
+                    if (response.ok) {
+                        showAlert('Success', 'Your order has been successfully placed!');
+                    } else {
+                        showAlert('Error', 'Failed to send order. Please try again.');
+                    }
+                })
+                .catch(() => {
+                    // Hide the loading spinner in case of error
+                    hideLoadingSpinner();
+                    showAlert('Error', 'An error occurred while processing your order.');
+                });
+        }
+
+        function calculateTotalPrice() {
+            const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            return cart.reduce((total, item) => total + item.price, 0);
+        }
+
+        function restrictToTwoDigits() {
+            const tableNoInput = document.getElementById('tableNo');
+            if (tableNoInput.value.length > 2) {
+                tableNoInput.value = tableNoInput.value.slice(0, 2); // Ensure only two digits are entered
+            }
+        }
+
+        function validateFullName() {
+            const fullNameInput = document.getElementById('fullName');
+            const regex = /^[A-Za-z\s]+$/; // Only allow alphabets and spaces
+            if (fullNameInput.value && !regex.test(fullNameInput.value)) {
+                fullNameInput.setCustomValidity('Please enter a valid name (letters and spaces only).');
+            } else {
+                fullNameInput.setCustomValidity('');
+            }
+        }
+
+
+
+        function closeAlert(alertId) {
+            document.getElementById(alertId).style.display = 'none';
+
+            // If the success alert is closed, redirect to bill.html
+            if (alertId === 'alertSuccess') {
+                window.location.href = 'bill.html'; // Redirects to the bill.html page
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

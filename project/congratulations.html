@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #21241fc2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .congrats-container {
+            text-align: center;
+            background: linear-gradient(135deg, #88a4be, #ba9eb1);
+           
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            height: 90vh;
+            font-size: 1rem;
+            position: fixed;
+            /* Fixing the container */
+            top: 50%;
+            /* Center the container vertically */
+            left: 50%;
+            /* Center the container horizontally */
+            transform: translate(-50%, -50%);
+            /* Correct centering */
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: bounceIn 2s ease-out, rotateIn 1s ease-in-out, colorChange 5s infinite;
+            /* Apply multiple animations */
+        }
+
+        /* Keyframes for Bounce In Effect */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0) translateY(-30px);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1) translateY(10px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Keyframes for Rotation Effect */
+        @keyframes rotateIn {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        /* Keyframes for color-changing effect */
+        @keyframes colorChange {
+            0% {
+                color: #ff5733;
+                /* Red */
+            }
+
+            25% {
+                color: #33b5ff;
+                /* Blue */
+            }
+
+            50% {
+                color: #33ff57;
+                /* Green */
+            }
+
+            75% {
+                color: #f0e130;
+                /* Yellow */
+            }
+
+            100% {
+                color: #ff5733;
+                /* Red */
+            }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .thank-you {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            animation: fadeIn 2s ease-out;
+            /* Animation for fading in */
+        }
+
+        /* Keyframes for fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animated Heart */
+        .heart {
+            color: #e03e32;
+            font-size: 3rem;
+            margin-top: 15px;
+            animation: pulse 1.5s infinite;
+            /* Apply the animation */
+        }
+
+        /* Keyframes for pulsing animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+                /* Grow the heart */
+            }
+
+            100% {
+                transform: scale(1);
+                /* Return to normal size */
+            }
+        }
+
+        .btn-redirect {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-redirect:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="congrats-container">
+        <h1><b>🎉 Congratulations! 🎉</b></h1><br>
+        <p class="message">
+            Your payment has been successfully processed. <br>
+            Please inform the counter that you have made the online payment. <br><br>
+            Thank you for choosing us! We appreciate your trust in us and are happy to serve you. <br>
+        </p>
+
+        <div class="heart">🥳</div>
+
+        <p class="thank-you">We value your Trust !</p>
+
+        <br><a href="index.html" class="btn-redirect">Go to Homepage</a>
+        <!-- Link to your homepage or any other destination -->
+    </div>
+
+</body>
+
+</html>

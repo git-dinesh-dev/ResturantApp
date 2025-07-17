@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fit Restro</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">RESTRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><div></div></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project/index.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section id="home">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <!-- Slide Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+       <!-- Carousel Slides -->
+<div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="project/img/s1.jpeg" class="d-block w-100" alt="Slide 1 Image">
+      <div class="carousel-caption">
+        <h2>Healthy, Fresh, and Delicious</h2>
+        <p>We are committed to providing 100% health-friendly meals using only the finest, all-natural ingredients. Enjoy the best quality, taste, and nutrition in every bite!</p>
+      </div>
+    </div>
+  
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="project/img/s2.jpeg" class="d-block w-100" alt="Slide 2 Image">
+      <div class="carousel-caption">
+        <h2>Quality You Can Taste</h2>
+        <p>At our restaurant, we prioritize your health by using premium ingredients. Our meals are carefully crafted to offer both the best taste and the highest quality, with every ingredient carefully selected for its health benefits.</p>
+      </div>
+    </div>
+  
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="project/img/s3.jpeg" class="d-block w-100" alt="Slide 3 Image">
+      <div class="carousel-caption">
+        <h2>Pure Ingredients, Pure Joy</h2>
+        <p>Experience the difference with every meal made from fresh, all-natural ingredients. We believe in offering nothing but the best, so you can enjoy nutritious meals without compromising on flavor.</p>
+      </div>
+    </div>
+  </div>
+  
+    
+        <!-- Navigation Arrows -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    
+
+
+
+    
+    <section id="about" class="templatemo-section templatemo-light-gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="text-uppercase">About Our Restaurant</h1>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <!-- Updated Paragraph with highlighted and colored words -->
+                    <p>We are passionate about serving <span style="color: #FF6600; font-weight: bold;">healthy, flavorful meals</span> that nourish both your body and your soul. At our restaurant, we prioritize <span style="color: #00CC66; font-weight: bold;">quality</span> by sourcing only the finest, <span style="color: #FFCC00;">all-natural ingredients</span>, ensuring that each dish is not only delicious but also packed with essential nutrients. We believe in <span style="color: #FF6600; font-weight: bold;">sustainability</span> and care in every step—from <span style="color: #66CCFF;">farm-fresh produce</span> to <span style="color: #FF3333;">hormone-free proteins</span>—delivering meals that are as good for the environment as they are for you. Whether you're enjoying a hearty meal or a light snack, our commitment to <span style="color: #00CC66; font-weight: bold;">health and quality</span> shines through in every bite, offering you the best of both worlds: <span style="color: #FF6600; font-weight: bold;">taste</span> and well-being. Our chefs take immense pride in creating <span style="color: #FFCC00; font-weight: bold;">innovative</span> and wholesome recipes, always experimenting with new flavors while honoring traditional culinary techniques. Each meal is crafted to not only satisfy your taste buds but also fuel your day, promoting a <span style="color: #00CC66;">healthy lifestyle</span> and a stronger connection to the food we eat.</p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-img-container">
+                        <img src="project/img/qu1.jpeg" class="img-responsive" alt="about img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+<!-- Team Section -->
+<section id="team" class="templatemo-section templatemo-light-gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-uppercase">Our Team</h2>
+                
+            </div>
+            
+            <!-- Team Member Cards -->
+            <div class="col-md-4 col-sm-6">
+                <div class="team-card" onclick="showTeamDetail('John Doe', 'CEO & Founder', 'John is an experienced entrepreneur with a passion for pizza.')">
+                    <div class="team-img-container">
+                        <img src="img/blazing_chicken_&_paprika_pizza.jpg" class="img-responsive team-img" alt="Team Member 1">
+                    </div>
+                    <h4>John Doe</h4>
+                    <p>CEO & Founder</p>
+                    <!-- Social Media Icons -->
+                    <div class="team-social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="team-card" onclick="showTeamDetail('Jane Smith', 'Head Chef', 'Jane is a culinary artist who crafts the finest pizza flavors.')">
+                    <div class="team-img-container">
+                        <img src="img/blazing_chicken_&_paprika_pizza.jpg" class="img-responsive team-img" alt="Team Member 2">
+                    </div>
+                    <h4>Jane Smith</h4>
+                    <p>Head Chef</p>
+                    <!-- Social Media Icons -->
+                    <div class="team-social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="team-card" onclick="showTeamDetail('Emily Johnson', 'Marketing Manager', 'Emily is the mastermind behind our amazing campaigns.')">
+                    <div class="team-img-container">
+                        <img src="img/blazing_chicken_&_paprika_pizza.jpg" class="img-responsive team-img" alt="Team Member 3">
+                    </div>
+                    <h4>Emily Johnson</h4>
+                    <p>Marketing Manager</p>
+                    <!-- Social Media Icons -->
+                    <div class="team-social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Details Banner -->
+    <div id="team-details-banner" class="team-banner" style="display: none;">
+        <div class="container">
+            <h2 id="team-name"></h2>
+            <h4 id="team-role"></h4>
+            <p id="team-description"></p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="templatemo-section templatemo-light-gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-uppercase">Gallery</h2>
+                <div class="row">
+                    <!-- Gallery Images -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img1.jpeg" alt="Gallery Image 1" class="img-responsive gallery-img" onclick="openLightbox();setSlide(1);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img2.jpeg" alt="Gallery Image 2" class="img-responsive gallery-img" onclick="openLightbox();setSlide(2);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img3.jpg" alt="Gallery Image 3" class="img-responsive gallery-img" onclick="openLightbox();setSlide(3);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img4.jpeg" alt="Gallery Image 4" class="img-responsive gallery-img" onclick="openLightbox();setSlide(4);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img5.jpeg" alt="Gallery Image 5" class="img-responsive gallery-img" onclick="openLightbox();setSlide(5);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item">
+                            <img src="img/img6.jpg" alt="Gallery Image 6" class="img-responsive gallery-img" onclick="openLightbox();setSlide(6);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div class="slides">
+                <img src="img/img1.jpeg" class="lightbox-image">
+            </div>
+            <div class="slides">
+                <img src="img/img2.jpeg" class="lightbox-image">
+            </div>
+            <div class="slides">
+                <img src="img/img3.jpg" class="lightbox-image">
+            </div>
+            <div class="slides">
+                <img src="img/img4.jpeg" class="lightbox-image">
+            </div>
+            <div class="slides">
+                <img src="img/img5.jpeg" class="lightbox-image">
+            </div>
+            <div class="slides">
+                <img src="img/img6.jpg" class="lightbox-image">
+            </div>
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Contact Us Section -->
+<section id="contact" class="templatemo-section templatemo-light-gray-bg">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Us Title -->
+            <div class="col-md-12">
+                <h2 class="text-center text-uppercase">Contact Us</h2>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <form id="contactForm" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="button" onclick="sendMessageToTelegram()" class="btn btn-orange">Send</button>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-md-6">
+                <h3 class="text-center">Find Us Here</h3>
+
+                <!-- Map Container -->
+                <div id="map"></div>
+
+                <!-- Address Details -->
+                <div class="contact-details">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Sector 87, Noida, Uttar Pradesh, India
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i> +91 123-456-7890
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i> hello@company.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// JavaScript to send the message to Telegram using Fetch API
+function sendMessageToTelegram() {
+    // Get form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Check if all fields are filled
+    if (!name || !email || !subject || !message) {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    // Prepare the Telegram bot token and chat ID
+    const botToken = "7862830997:AAF7cJ2VF8RzFGGY1ucbcY_Wzeg5ZaoLOms";  // Replace with your bot's token
+    const chatId = "-1002418420190";  // Replace with your chat ID or group ID
+
+    // Format the message
+    const text = `New contact form submission:\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+
+    // Send data to Telegram bot using fetch API
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+            chat_id: chatId,
+            text: text
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert("Message sent to Telegram successfully!");
+        } else {
+            alert("Failed to send message.");
+        }
+    })
+    .catch(error => {
+        console.error("Error sending message to Telegram:", error);
+        alert("An error occurred.");
+    });
+}
+</script>
+
+
+
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <p class="copyright">
+                Copyright © 2084 Company Name
+            </p>
+        </div>
+    </footer>
+
+
+   <!-- Bootstrap JS and Icons -->
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+
+   <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1;
+    /* Push footer to the bottom when content is less */
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    position: fixed;
+    /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    /* Ensure navbar stays above other content */
+    padding: 2px 0;
+    /* Adjust top and bottom padding to reduce height */
+}
+
+.navbar .navbar-brand {
+    color: #ffa400;
+    font-size: 40px;
+    line-height: 35px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffa400;
+    font-family: 'Chewy', cursive;
+    font-weight: 1000;
+    font-size: 1.1rem;
+    line-height: 35px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon div {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffa400;
+    margin: 4px auto;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Navbar Hover/Active Styling */
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: transparent;
+}
+
+/* Ensuring content below the navbar has space */
+.navbar+.container {
+    padding-top: 80px;
+    /* Ensure content is spaced correctly */
+}
+
+
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 42px 0;
+    /* Increase padding to make the footer taller */
+    margin-top: auto;
+    /* Ensure the footer stays at the bottom */
+    font-family: 'Handlee', cursive;
+    /* Use the desired font */
+    font-weight: normal;
+    /* Remove bold font */
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    /* Keep icons large */
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: orange;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    /* Standard font size */
+    font-weight: bold;
+    /* Ensure text is not bold */
+}
+
+footer .divider {
+    width: 100px;
+    height: 2px;
+    background-color: orange;
+    margin: 20px auto;
+    /* Increase vertical spacing around the divider */
+}
+
+
+
+.carousel-item {
+    position: relative;
+    height: 70vh; /* Default height for larger screens */
+    margin-top: 5vh;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+  }
+
+  .carousel-caption {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .carousel-caption h2 {
+    color: #ff9100;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: 10vh;
+  }
+
+  .carousel-caption p {
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    margin-top: -2vh;
+  }
+
+  /* Media Query for Smaller Screens */
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 50vh; /* Reduce height for smaller screens */
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 35%; /* Adjusted to move the text higher */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+    .carousel-caption h2 {
+      font-size: 1.5rem; /* Smaller heading size */
+      margin-bottom: 5vh;
+    }
+
+    .carousel-caption p {
+      font-size: 1rem; /* Smaller paragraph size */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .carousel-item {
+      height: 30vh; /* Further reduce height for extra small screens */
+    }
+
+    .carousel-caption h2 {
+      font-size: 1.25rem; /* Even smaller heading size */
+    }
+
+    .carousel-caption p {
+      font-size: 0.9rem; /* Smaller paragraph size */
+    }
+  }
+
+
+
+/* About Section */
+#about {
+    padding: 80px 0;
+    background-color: #f1f1f1;
+    text-align: center;
+    position: relative;
+}
+
+#about h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: orange;
+    font-weight: 900;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.about-divider {
+    width: 60px;
+    border: 2px solid #e74c3c;
+    margin: 0 auto 40px auto;
+}
+
+#about h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+.about-text {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.about-img-container {
+    width: 100%; /* Make the div container take up full width */
+    max-width: 500px; /* Limit the max width of the container */
+    height: 300px; /* Set a height for the container */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden; /* Hide any overflow of the image */
+    border-radius: 12px; /* Optional: Give the container rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.about-img-container img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container's height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    #about h1 {
+        font-size: 28px;
+    }
+
+    #about h3 {
+        font-size: 24px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .about-img-container {
+        max-width: 100%;
+        height: auto; /* Let the height adjust automatically on smaller screens */
+    }
+
+    .about-img-container img {
+        height: auto; /* Maintain aspect ratio on small screens */
+    }
+}
+
+
+/* Team Section */
+#team {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+    position: relative;
+}
+
+#team h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: orange;
+    font-weight: 900;
+    font-family: 'Fredoka One', sans-serif;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Team Card */
+.team-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Image Hover Zoom */
+.team-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Team Member Name */
+.team-card h4 {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif; /* Change to an attractive font */
+    color: orange; /* Name color */
+    font-weight: bold; /* Bold name */
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Team Member Role */
+.team-card p {
+    font-size: 18px;
+    font-family: 'Arial', sans-serif; /* Change to an attractive font */
+    color: black; /* Role color */
+    font-weight: lighter; /* Bold role */
+}
+
+/* Social Media Icons */
+.team-social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: orange;
+}
+
+/* Team Details Banner */
+.team-banner {
+    background-color: #f7f7f7;
+    padding: 30px 0;
+    margin-top: 20px;
+    border-top: 3px solid #ddd;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .team-card {
+        margin-bottom: 30px;
+    }
+
+    #team h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* Gallery Section Styling */
+.gallery-item {
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    border-radius: 15px; /* Rounded corners for the gallery items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow around the gallery item */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the image */
+    height: 250px; /* Ensures all gallery items are the same height */
+}
+
+/* Zoom effect when hovering over the gallery item */
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Gallery image styling */
+.gallery-img {
+    width: auto;
+    height: 100%; /* Image fits the height of the gallery item */
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 10px; /* Ensure image also has rounded corners */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+/* Zoom effect for images */
+.gallery-img:hover {
+    transform: scale(1.1); /* Additional zoom on image hover */
+}
+
+/* Section Title Styling */
+h2 {
+    color: orange; /* Orange color */
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: bold; /* Bold font */
+    text-transform: uppercase;
+    font-size: 36px; /* Adjust the size */
+    margin-bottom: 60px; /* Space below the title */
+    margin-top: 50px; /* Space above the title */
+    text-align: center; /* Center the title */
+    letter-spacing: 2px; /* Slight spacing between letters for a modern look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adds a soft shadow to the text */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .gallery-item {
+        height: 200px; /* Reduce height on smaller screens */
+    }
+
+    h2 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+        margin-bottom: 40px;
+    }
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.lightbox-image {
+    width: 100%;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.slides {
+    display: none;
+}
+
+
+
+
+/* Form Styling */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+.btn-orange {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #e69500;
+}
+
+/* Section Styling */
+.templatemo-light-gray-bg {
+    padding: 50px 0;
+}
+
+h2 {
+    color: orange;
+    font-family: 'Fredoka One', sans-serif;
+    margin-bottom: 35px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+h3 {
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Map Styling */
+#map {
+    width: 100%;
+    height: 250px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Address Styling */
+.contact-details p {
+    color: #555;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.contact-details i {
+    color: orange;
+    margin-right: 10px;
+}

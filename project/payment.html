@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Center QR Code container */
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            /* Centers horizontally */
+            align-items: center;
+            /* Centers vertically */
+            height: 190px;
+            /* Set the height for centering */
+            margin-top: 50px;
+            /* Adds top margin for spacing */
+            margin-bottom: 50px;
+        }
+
+        #qrcode {
+            display: block;
+            margin: 0 auto;
+            /* Ensures QR code is centered */
+        }
+
+        /* Alert box style */
+        .alert-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            padding: 30px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            text-align: center;
+            z-index: 9999;
+            display: none;
+            /* Hidden by default */
+        }
+
+        /* Loading Spinner box style */
+        .loading-box {
+            position: fixed;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            /* Hidden by default */
+            text-align: center;
+            z-index: 9998;
+        }
+
+        .loading-box .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .loading-box p {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Success alert style */
+        .alert-box.success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+
+        /* Info alert style */
+        .alert-box.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border-color: #bee5eb;
+        }
+
+        /* Warning alert style */
+        .alert-box.warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border-color: #ffeeba;
+        }
+
+        /* Error alert style */
+        .alert-box.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+
+        /* Style for close button */
+        .alert-box .close-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Centered close button for all alerts except success */
+        .alert-box .close-btn-container {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style for OK button in success alert */
+        .alert-box .ok-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .alert-box .ok-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 text-center">
+        <h2>Scan QR Code to Pay</h2>
+
+        <!-- QR Code container centered -->
+        <div class="qr-container">
+            <div id="qrcode"></div>
+        </div>
+
+        <h4 id="amountDisplay"></h4><br>
+
+        <!-- Upload payment screenshot section -->
+        <div class="mt-4">
+            <label for="paymentScreenshot" class="form-label"><b>Upload Payment Screenshot:</b></label>
+            <input type="file" id="paymentScreenshot" class="form-control" accept="image/*">
+        </div>
+
+        <!-- Reference number input section -->
+        <div class="mt-4">
+            <label for="referenceNumber" class="form-label"><b>Reference Number after Payment:</b></label>
+            <input type="text" id="referenceNumber" class="form-control text-center" placeholder="Reference Number"><br>
+            <button class="btn btn-primary mt-3" onclick="submitPayment()">Submit</button>
+        </div><br>
+    </div>
+
+    <!-- Loading spinner box -->
+    <div id="loadingBox" class="loading-box">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Alert box structure -->
+    <div id="alertBox" class="alert-box">
+        <p id="alertMessage">This is an alert message!</p>
+        <div class="close-btn-container">
+            <button class="close-btn" onclick="closeAlert()">Close</button>
+        </div>
+        <button class="ok-btn" id="okBtn" onclick="redirectToBillPage()" style="display: none;">OK</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get('amount');
+        const customerName = urlParams.get('name');
+        const customerPhone = urlParams.get('phone');
+
+        // Display the amount on the page
+        document.getElementById('amountDisplay').textContent = `Amount: ₹${amount}`;
+
+        // Mask phone number (last 4 digits visible)
+        const maskedPhone = maskPhoneNumber(customerPhone);
+
+        // Generate the QR code for UPI payment
+        const upiId = "7428312680@ptsbi";
+        const upiUrl = `upi://pay?pa=${upiId}&pn=${customerName}&am=${amount}&cu=INR`;
+        new QRCode(document.getElementById("qrcode"), {
+            text: upiUrl,
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff"
+        });
+
+        // Function to mask the phone number (show only last 4 digits)
+        function maskPhoneNumber(phone) {
+            return phone.slice(0, 3) + "xxxx" + phone.slice(-3);
+        }
+
+        // Submit payment details to the Telegram bot
+        async function submitPayment() {
+            const referenceNumber = document.getElementById("referenceNumber").value;
+            const screenshotInput = document.getElementById("paymentScreenshot");
+
+            if (!screenshotInput.files.length) {
+                showAlert("Please upload the payment screenshot.", "error");
+                return;
+            }
+
+            if (!referenceNumber) {
+                showAlert("Please enter the reference number.", "error");
+                return;
+            }
+
+            const file = screenshotInput.files[0];
+            const formData = new FormData();
+            formData.append("chat_id", "-1002418420190");
+            formData.append(
+                "caption",
+                `Payment Received\nName: ${customerName}\nPhone: ${maskedPhone}\nAmount: ₹${amount}\nReference: ${referenceNumber}`
+            );
+            formData.append("photo", file);
+
+            // Show the loading spinner
+            showLoadingSpinner();
+
+            try {
+                const botToken = "7862830997:AAF7cJ2VF8RzFGGY1ucbcY_Wzeg5ZaoLOms";
+                const response = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+                    method: "POST",
+                    body: formData
+                });
+
+                // Hide the spinner after the process
+                hideLoadingSpinner();
+
+                if (response.ok) {
+                    showAlert("Payment details sent successfully!", "success");
+                    document.getElementById('okBtn').style.display = 'block';  // Show OK button
+                    document.querySelector('.close-btn-container').style.display = 'none'; // Hide close button
+                } else {
+                    showAlert("Failed to send payment details. Please try again.", "error");
+                }
+            } catch (error) {
+                console.error("Error sending payment details:", error);
+                showAlert("An error occurred. Please try again.", "error");
+                hideLoadingSpinner();  // Hide loading spinner in case of error
+            }
+        }
+
+        // Function to show alert
+        function showAlert(message, type = 'info') {
+            const alertBox = document.getElementById('alertBox');
+            const alertMessage = document.getElementById('alertMessage');
+
+            // Set the message and alert type
+            alertMessage.textContent = message;
+            alertBox.className = `alert-box ${type}`;
+
+            // Display the alert box
+            alertBox.style.display = 'block';
+        }
+
+        // Close the alert box manually
+        function closeAlert() {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.style.display = 'none';
+        }
+
+        // Function to redirect to the bill page when OK is clicked
+        function redirectToBillPage() {
+            window.location.href = "congratulations.html"; // Redirect to the bill page
+        }
+
+        // Show loading spinner and loading text
+        function showLoadingSpinner() {
+            document.getElementById('loadingBox').style.display = 'block';
+        }
+
+        // Hide loading spinner and loading text
+        function hideLoadingSpinner() {
+            document.getElementById('loadingBox').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
